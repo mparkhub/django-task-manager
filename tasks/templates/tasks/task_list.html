@@ -8,7 +8,7 @@
         <ul>
             {% for task in tasks %}
                 <li>
-                    <a href="{% url 'update_task' %}">{{ task.title }}</a>
+                    <a href="{% url 'update_task' task.pk %}">{{ task.title }}</a>
                     {% if task.completed %}(Complete){% else %}(Incomplete){% endif %}
                 </li>
             {% empty %}
