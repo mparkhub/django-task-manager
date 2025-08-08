@@ -8,7 +8,7 @@
         <ul>
             {% for task in tasks %}
                 <li>
-                    {{ task.title }} {% if task.completed %}Complete{% else %}Incomplete{% endif %}
+                    {{ task.title }} {% if task.completed %}(Complete){% else %}(Incomplete){% endif %}
                 </li>
             {% empty %}
                 <li>No tasks yet!</li>
