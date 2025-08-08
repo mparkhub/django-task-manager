@@ -7,7 +7,7 @@
         <h1>{{ task.title }}</h1>
 
         <form method="post">
-            {% csrf token %}
+            {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Save changes</button>
             <a href="{% url 'task_list' %}">Cancel</a>
