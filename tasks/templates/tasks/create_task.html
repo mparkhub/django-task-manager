@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Create Task</title>
-    </head>
-    <body>
-        <h1>Create a New Task</h1>
+{% extends 'base.html' %}
+{% block title %}Create Task - Task Manager{% endblock %}
+{% block content %}
+    <h1 class="h3 mb-3">Create a New Task</h1>
 
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Create Task</button>
-        </form>
-
-        <p><a href="{% url 'task_list' %}">Back to Task List</a></p>
-    </body>
-</html>
+    <div class="card">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-primary" type="submit">Create Task</button>
+                <a class="btn btn-link" href="{% url 'task_list' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
