@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Delete Task</title>
-    </head>
-    <body>
-        <h1>Delete Task</h1>
-        <p>Are you sure you want to delete <strong>{{task.title}}</strong>?</p>
-
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit">Yes, delete</button>
-            <a href="{% url 'task_list' %}">Cancel</a>
-        </form>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Delete Task - Task Manager{% endblock %}
+{% block content %}
+    <h1 class="h3 mb-3">Delete Task</h1>
+    <div class="alert alert-warning" role="alert">
+        Are you sure you want to delete: <strong>{{ task.title }}</strong>?
+    </div>
+    <form method="post" class="d-flex gap-2">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Yes, delete</button>
+        <a class="btn btn-outline-secondary" href="{% url 'task_list' %}">Cancel</a>
+    </form>
+{% endblock %}
